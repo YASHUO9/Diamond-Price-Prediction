@@ -5,7 +5,7 @@ import os
 import sys
 from src.DimondPricePrediction.logger import logging
 from src.DimondPricePrediction.exception import customexception
-from dataclasses import dataclass
+from dataclasses import dataclass # it will generate "among other things, an __init__()" method
 from src.DimondPricePrediction.utils.utils import save_object
 from src.DimondPricePrediction.utils.utils import evaluate_model
 

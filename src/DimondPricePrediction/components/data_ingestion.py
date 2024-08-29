@@ -1,6 +1,6 @@
 
 import pandas as pd
-import numpy as np
+
 from src.DimondPricePrediction.logger import logging
 from src.DimondPricePrediction.exception import customexception
 

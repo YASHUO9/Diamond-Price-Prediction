@@ -27,14 +27,18 @@ list_of_files=[
 # here will create a directory
 
 for filepath in list_of_files:
+    """ os.path.split() method in Python is used to Split the pathname path into a pair (head, tail)
+    split the path into directory(head) and filename(tail)
+    example: filedir="src/DimondPricePrediction/components", filename="data_ingestion.py"""
+    
     filepath=Path(filepath)
-    filedir,filename=os.path.split(filepath)
+    filedir,filename=os.path.split(filepath) # "
     
     """ how exist_ok works:if "directory" already exists, 
     os.makedirs() will not raise an error, and it will do nothing. 
     If "my_directory" doesn't exist, it will create the directory.
     """
-    if filedir != "":
+    if filedir != "": 
         os.makedirs(filedir,exist_ok=True)
         
     if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
