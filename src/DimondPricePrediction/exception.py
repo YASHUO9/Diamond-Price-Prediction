@@ -6,7 +6,7 @@ class customexception(Exception):
         """ custom exception class to log error message, line number and file name"""
         
         self.error_message = error_message
-        _,_,exc_tb = error_details.exc_info()
+        _,_,exc_tb = error_details.exc_info()  # get the exception traceback or object
         
         self.lineno=exc_tb.tb_lineno
         self.file_name=exc_tb.tb_frame.f_code.co_filename 
