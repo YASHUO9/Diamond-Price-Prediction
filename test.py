@@ -1,12 +1,17 @@
-from src.DimondPricePrediction.pipelines.training_pipeline import TrainingPipeline
+
+from src.DimondPricePrediction.components.data_ingestion import DataIngestion
+from src.DimondPricePrediction.components.model_trainer import ModelTrainer
+from src.DimondPricePrediction.components.data_transformation import DataTransformation
 
 
-object = TrainingPipeline()
 
-train,test = object.start_data_ingestion()
+object = DataIngestion()
+train_data_path,test_data_path = object.initiate_data_ingestion()
+data_transformation = DataTransformation()
+train_arr,test_arr = data_transformation.initialize_data_transformation(train_data_path,test_data_path)
 
-train , test = object.start_data_transformation(train,test)
-object.start_trainig()  
-object.start_model_training() 
 
-# Compare this snippet from src/DimondPricePrediction/components/data_ingestion.py:
+model_trainer=ModelTrainer()
+model_trainer.initate_model_training(train_arr,test_arr)
+
+
